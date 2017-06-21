@@ -90,7 +90,7 @@ case "$1" in
 		fi
 
 		# Configure SMTP
-		REDMINE_SMTP_PORT=${REDMINE_SMTP_PORT:25}
+		REDMINE_SMTP_PORT=${REDMINE_SMTP_PORT:-25}
 
 		if [ ! -s config/configuration.yml ]; then
 			if [ "$REDMINE_SMTP_HOST" ]; then
@@ -100,7 +100,7 @@ case "$1" in
 					    delivery_method: :smtp
 					    smtp_settings:
 					      address: "$REDMINE_SMTP_HOST"
-					      port: "$REDMINE_SMTP_PORT"
+					      port: $REDMINE_SMTP_PORT
 				YML
 			fi
 		fi
