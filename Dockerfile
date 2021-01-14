@@ -1,4 +1,4 @@
-FROM redmine:4.0.5-passenger
+FROM redmine:4.1.1-passenger
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
