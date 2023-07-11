@@ -1,6 +1,6 @@
-FROM redmine:4.1.1-passenger
+FROM redmine:5-bookworm
 
 COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["passenger", "start"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
